@@ -36,7 +36,9 @@ public class ConfigurationReader {
     public String appPath() {
         return properties.getProperty("app.path");
     }
-
+public String automationName(){
+        return properties.getProperty(("automation.name"));
+}
     public String appPackage() {
         return properties.getProperty("app.package");
     }
@@ -56,7 +58,9 @@ public class ConfigurationReader {
     public String localDeviceName() {
         return properties.getProperty("local.device.name");
     }
-
+    public String realDeviceName() {
+        return properties.getProperty("real.device.name");
+    }
     public String udid() {
         return properties.getProperty("udid");
     }

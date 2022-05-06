@@ -5,7 +5,7 @@ import pages.MainPage;
 
 public class MainPageTest {
     @Test
-    public void loginByPrimaryCredentials(){
+    public void loginByPrimaryCredentials() throws InterruptedException {
         MainPage mainPage = new MainPage();
         mainPage
                 .loginByDefaultAccount()

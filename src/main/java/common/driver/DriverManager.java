@@ -32,9 +32,13 @@ public class DriverManager {
 
     private static AppiumDriver<MobileElement> createDriver() {
         switch (ENVIRONMENT_TYPE) {
-            case LOCAL:
+            case LOCAL_EMULATOR:
                 driver = new AndroidDriver<>(AddressConfigurator.getAppiumDriverLocalService(ConfigurationReader.get().appiumPort()),
-                        CapabilitiesConfigurator.getLocalCapabilities());
+                        CapabilitiesConfigurator.getLocalEmulatorCapabilities());
+                break;
+            case REAL_DEVICE:
+                driver = new AndroidDriver<>(AddressConfigurator.getAppiumDriverLocalService(ConfigurationReader.get().appiumPort()),
+                        CapabilitiesConfigurator.getRealDeviceCapabilities());
                 break;
             default:
                 throw new IllegalArgumentException(format("Unexpected environment value: %s", ENVIRONMENT_TYPE));

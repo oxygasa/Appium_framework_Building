@@ -16,7 +16,8 @@ public class MainPage extends BasePage {
     @AndroidFindBy(id = "com.trello:id/notification_bell")
     private MobileElement notificationBell;
 
-    public MainPage loginByDefaultAccount() {
+    public MainPage loginByDefaultAccount() throws InterruptedException {
+       Thread.sleep(5000);
         loginButton.click();
         primaryUserAccountOption.click();
         return this;

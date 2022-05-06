@@ -1,5 +1,5 @@
 package common.configuation;
 
 public enum EnvironmentType {
-    LOCAL
+    LOCAL_EMULATOR, REAL_DEVICE
 }
